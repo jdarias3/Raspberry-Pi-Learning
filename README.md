@@ -96,6 +96,12 @@ sudo visudo
 Defaults    env_keep+="http_proxy https_proxy no_proxy"
 ```
 
+and to use the proxy in apt-get
+
+``Acquire::http::Proxy "[http://yourproxyaddress:proxyport"](http://yourproxyaddress:proxyport%22/);``
+
+in a file placed in /etc/apt/conf.d (named similar to "10proxy" for example). It should also work when placed in /etc/apt/apt.conf but I don't remember if this file still exists on the latest Raspbian.
+
 Now reboot your Pi `$sudo reboot`
 
 **Note:** If you want to remove the proxy configuration, just access to the *environment* file and add a **#** at the beginning of each line and reboot the Pi again.
@@ -108,7 +114,30 @@ We are ready, we have our Rasberry Pi with our initial configuration, you can ke
 
 I selected **Raspberry Pi Desktop (RDP) GUI**, and the installation requires 878 MB on the SD.
 
+After the installation, you need to reboot the Pi and by default, you will go to the graphical interface. Now you have access to the graphical interface and you can start building your projects.
 
+Now I will show you some configuration changes I made:
+
+1. I prefered to use the command line interface on the boot, since I connect to the Pi throught SSH and make the changes. On the graphical interface I opened the terminal and access to the Raspberry configuration using the command ``$ sudo raspi-config`` 
+
+On *Boot options*, I selected the option to **Console Boot**, so in the next boot of the Pi, it will boot on the command line interface.
+
+After next boot, we are on the command line interface and start working, if you want to go to the Graphical interface use the following command:
+
+``$ sudo systemctl start lightdm``
+
+# Programs to install
+
+``$ sudo apt-get install git``
+For proxy to git
+
+``git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+``
+
+``$ sudo apt-get install vim``
+
+Adding proxy on PIP
+``pip install <name_of_module> --proxy [user:passwd@]proxy.server:port``
 
 # Other issues 
 
