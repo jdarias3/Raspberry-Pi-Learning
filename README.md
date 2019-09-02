@@ -98,6 +98,8 @@ Defaults    env_keep+="http_proxy https_proxy no_proxy"
 
 Now reboot your Pi `$sudo reboot`
 
+**Note:** If you want to remove the proxy configuration, just access to the *environment* file and add a **#** at the beginning of each line and reboot the Pi again.
+
 Finally, I have internet connection to install new software in my Pi and it is updated.
 
 We are ready, we have our Rasberry Pi with our initial configuration, you can keep working in the command line interface or you can move o the graphical interface. To move from command line to graphical interface, you can use the following command:
@@ -105,3 +107,17 @@ We are ready, we have our Rasberry Pi with our initial configuration, you can ke
 ```sudo apt-get install raspberrypi-ui-mods```
 
 I selected **Raspberry Pi Desktop (RDP) GUI**, and the installation requires 878 MB on the SD.
+
+
+
+# Other issues 
+
+## Unable to install using apt-get
+
+```sudo nano /etc/resolv.conf```
+
+Add the DNS server list
+
+``
+nameserver 8.8.8.8 nameserver 8.8.4.4
+``
