@@ -175,3 +175,17 @@ Add the DNS server list
 ``
 nameserver 8.8.8.8 nameserver 8.8.4.4
 ``
+
+
+
+
+To develep
+
+
+The apt.sh script further down the page will typically add the required GPG keys for the package to install correctly. However, I have had issues with it working correctly. To install the correct GPG keys simply run the following command.
+
+wget https://packagecloud.io/headmelted/codebuilds/gpgkey -O - | sudo apt-key add -
+To install Visual Studio Code, you only need to run a straightforward command.
+
+curl -L https://code.headmelted.com/installers/apt.sh | sudo bash
+Once done you should be able to find the visual studio code under the accessories menu called Code-OSS.
