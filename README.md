@@ -139,6 +139,31 @@ For proxy to git
 Adding proxy on PIP
 ``pip install <name_of_module> --proxy [user:passwd@]proxy.server:port``
 
+**VS CODE**
+
+Follow the steps below:
+1. Install the dependecies if you have not installed:
+
+```$sudo apt install apt-transport-https```
+
+2. Open an interactive session:
+
+``$sudo -i
+. <( wget -O - https://code.headmelted.com/installers/apt.sh )``
+
+3. Install VS Code
+
+``$sudo apt install code-oss``
+
+On March, and error on Raspberry PI was reporter in Github, in order to avoid it until it is fixed, please install the following version of the program:
+
+``$sudo apt install code-oss=1.29.0-1539702286``
+
+
+
+
+
+
 # Other issues 
 
 ## Unable to install using apt-get
